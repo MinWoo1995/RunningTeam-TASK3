@@ -24,10 +24,12 @@ public class main {
         //가렌에게 “레벨업(levelUp)” 메서드를 만들어 체력·공격력 증가하게 해보기
         garen1.levelUp(200);
         garen1.useR(ash1);
-        ash1.useW(garen1);
-
 
         //takeDamage 후 체력이 0 이하가 되면 “가렌 사망!” 메시지 출력
+        ash1.useW(garen1);
+
+        //attackDamage 값을 난수(랜덤)로 만들어 “치명타 개념” 추가해보기
+        garen2.useE(ash2);
 
 
 

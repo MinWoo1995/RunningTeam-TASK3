@@ -1,5 +1,7 @@
 package Task_LOLChampion;
 
+import java.util.Random;
+
 public abstract class Champion {
     private String name;
     private int levle;
@@ -9,6 +11,11 @@ public abstract class Champion {
     private int MP;
     private int ex;
     private int maxEx;
+    Random rand = new Random();
+    int mindamage=100;
+    int maxmindamage=300;
+    int range = maxmindamage - mindamage+1;
+    int randomDamage = rand.nextInt(range)+mindamage;
 
     public Champion(String name,int level,int attackDamage,int defenseDamage,int HP,int MP,int maxEx) {
         this.name = name;
@@ -24,6 +31,9 @@ public abstract class Champion {
     }
     public void setlevel(int level) {
         this.levle += level;
+    }
+    public int getrandomDamage(){
+        return randomDamage;
     }
     public int getmaxEx(){
         return maxEx;

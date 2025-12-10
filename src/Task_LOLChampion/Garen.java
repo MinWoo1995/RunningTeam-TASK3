@@ -29,7 +29,8 @@ public class Garen extends Champion {
     public void useE(Champion target) {
         System.out.println("------------useE------------");
         System.out.println(getName() + "이(가) 'E' 스킬을 사용합니다.");
-        int hp = target.getHP()-getattackDamage();
+        System.out.println(getName() + "의 'E' 스킬은 랜덤한 치명타 데미지가 발생합니다.");
+        int hp = target.getHP()-getrandomDamage();
         target.setHP(hp);
         System.out.println(target.getName()+"가"+getName()+"에게 공격 당하였습니다. 현재"+target.getName()+"의 체력은"+target.getHP()+"입니다.");
         //출력문을 데미지 계산 위에 위치시켜서 감소된 HP 확인이 안되었다.[문제]
