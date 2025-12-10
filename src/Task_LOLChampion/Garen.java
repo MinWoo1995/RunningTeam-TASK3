@@ -37,7 +37,7 @@ public class Garen extends Champion {
         mp -= 50;
         setMP(mp);
         System.out.println(getName()+"의 남은 마력 : "+getMP());
-        System.out.println("----------------------------");
+        System.out.println("---------------------------");
     }
     @Override
     public void useW(Champion target) {
