@@ -11,7 +11,7 @@ public class main {
         garen1.attackTo(ash1);
         ash1.attackTo(garen1);
 
-        //Q/W/E/R 스킬을 모두 추상 메서드로  확장해보기
+        //Q/W/E/R 스킬을 모두 추상 메서드로 확장해보기
         ash2.useQ(garen2);
         ash2.useW(garen2);
         ash2.useE(garen2);
