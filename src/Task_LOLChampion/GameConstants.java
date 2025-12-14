@@ -25,6 +25,8 @@ public class GameConstants {//여기에는 static 선언 불가.
     private static final int maxresurrectCount = 2;
     private static final int maxresurrectCount2 = 3;
 
+
+
     private GameConstants(){
         throw new AssertionError("이 클래스는 상수만 취급하는 클래스입니다. [클래스명.상수명]으로 호출하세요");
         //객체를 생성할려고 한다면, 오류문을 출력하여 올바르게 사용할수 있도록 안내하자!
@@ -57,4 +59,7 @@ public class GameConstants {//여기에는 static 선언 불가.
             System.out.println((i+1)+"번 "+log.get(i));
         }
     }
+
+
+
 }

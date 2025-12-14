@@ -61,5 +61,36 @@ public class main {
 
         //전투 로그 기록 출력
         GameConstants.LogPrint();
+
+        //static 변수 두 개가 서로 참조할 때 초기화 순서 문제를 경험해보기
+        /*int a = 5;
+        int c = a + b;//일반 변수의경우 선언되지 않고 먼저 사용하면 오류가 발생
+        int b = 5;
+
+        System.out.println(c);*/
+
+        /*
+        GameConstants클래스
+        public static int a = b+10;
+        public static int b = 20;
+
+        public static void test(){
+            System.out.println("a :" + a);<-10출력
+            System.out.println("b :" + b);<-20출력
+        }
+
+        GameConstants.test();
+        //확인해보니, 논리적으로 실행이 되어야하는데, 자바 버전에 따라 실행이 불가능함
+        */
+
+        //전투 횟수(battleCount)를 인스턴스 필드로 바꾸면 어떤 문제가 생기는지 실험
+        //GameConstants.battleCount을 인스턴스로 변경시 모든 챔피언의 전투횟수를 수집할수 없다.
+        //챔피언별 battleCount를 가지게 되고 자기의 카운트만 저장하게 됩니다.
+        //챔피언별 저장한 카운트를 게터로 받아와서 한대모아 더해서 출력하는 방법이 가능하다.
+
+
+        //상수 그룹을 Enum으로 표현해보기 [속성(체력/공격/방어)를 상수화 시켜 챔피언 생성시 상수조합으로 챔피언 생성하기]
+
+
     }
 }
