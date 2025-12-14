@@ -170,19 +170,21 @@ public abstract class Champion {
     }
     //고정된 부활(resurrect) 규칙을 final 메서드로 만들기
     final void resurrect1(){
+
         if(this.HP<=0){
             this.HP=0;//너무 큰 데미지를 입어 마이너스 체력까지 떨어진 상태일 경우 0으로 체력을 초기화후 20센트 체력을 주입
             this.HP+=(int)(GameConstants.HP * 0.2);//해당 변수들이 int 형이기 때문에 더블형이 불가하여 형변환을 해야한다.
             System.out.println(this.name + "의 체력이 20% 회복되어 부활 되었습니다. 현재 체력 : " + this.HP);
             System.out.println(this.name + "님 어서 우물로 돌아가 체력을 회복하세요~");
         }
+        hook();
+
     }
     final void resurrect(){
         if(this.HP<=0){
             this.HP=0;
         }
     }
-
     public abstract void checkHP();//공격자가 공격 당한 챔피언의 피를 본인 스스로 확인해보라는 메서드
-
+    public void hook(){}
 }

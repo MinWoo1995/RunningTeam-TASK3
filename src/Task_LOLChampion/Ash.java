@@ -84,5 +84,10 @@ public class Ash extends Champion implements otherResurrect {
             System.out.println(this.getName()+"은 부활"+this.getmaxresurrectCount2()+"회를 사용 하셨음으로 부활이 불가합니다.");
         }
     }
+    public void hook(){
+        System.out.println(this.getName()+"은 부활하면서 체력 증강 +200 버프를 추가 적용받았습니다.");
+        int buf = this.getHP()+100;
+        this.setHP(buf);
+    }
 
 }

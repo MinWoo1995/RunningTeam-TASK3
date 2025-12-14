@@ -55,5 +55,10 @@ public class Lux extends Champion {
             resurrect();
         }
     }
+    public void hook(){
+        System.out.println(this.getName()+"은 부활하면서 체력 증강 +300 버프를 추가 적용받았습니다.");
+        int buf = this.getHP()+100;
+        this.setHP(buf);
+    }
 
 }
