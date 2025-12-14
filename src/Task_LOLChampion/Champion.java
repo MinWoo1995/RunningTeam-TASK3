@@ -1,5 +1,7 @@
 package Task_LOLChampion;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public abstract class Champion {
@@ -23,6 +25,8 @@ public abstract class Champion {
 
     final double CRITICAL_CHANCE = 0.5;//50% 확률
     Random random = new Random();
+
+
 
     public Champion(String name,int level,int attackDamage,int defenseDamage,int MP,int maxEx) {
         this.name = name;
@@ -164,4 +168,5 @@ public abstract class Champion {
     }
 
     public abstract void checkHP();//공격자가 공격 당한 챔피언의 피를 본인 스스로 확인해보라는 메서드
+
 }

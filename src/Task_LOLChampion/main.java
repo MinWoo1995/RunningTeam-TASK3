@@ -58,5 +58,8 @@ public class main {
         garen1.useQ(ash4,ash4);
         garen1.useQ(ash4,ash4);
         garen1.useQ(ash4,ash4);
+
+        //전투 로그 기록 출력
+        GameConstants.LogPrint();
     }
 }

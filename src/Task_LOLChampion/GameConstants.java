@@ -1,5 +1,8 @@
 package Task_LOLChampion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameConstants {//여기에는 static 선언 불가.
     //내부에 동일한 이름을 가진 (GameConstants)을 2중 구조로 선언시 내부 클래스에는 static 선언이 가능하다.
     //내부에 2중 클래스를 만들어 static을 부여하는 사용법은 크게 2가지 정도이다.
@@ -43,5 +46,15 @@ public class GameConstants {//여기에는 static 선언 불가.
     }
     public static int getmaxresurrectCount2(){
         return GameConstants.maxresurrectCount2;
+    }
+    public static List<String> log = new ArrayList<>();//전투로그 저장하는 동적배열
+    public static void Log(String logMassage){
+        log.add(logMassage);
+        System.out.println("전투로그가 기록되었습니다.");
+    }
+    public static void LogPrint(){
+        for(int i=0;i<log.size();i++){
+            System.out.println((i+1)+"번 "+log.get(i));
+        }
     }
 }

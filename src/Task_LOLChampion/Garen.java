@@ -26,6 +26,8 @@ public class Garen extends Champion implements Tanker,ShortDistance,otherResurre
         System.out.println("----------------------------");
         GameConstants.battleCount++;
         target2.ohterResurrect();
+        String logMemo = this.getName()+"의 "+"Q 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     @Override
     public void useR(Champion target) {
@@ -41,6 +43,8 @@ public class Garen extends Champion implements Tanker,ShortDistance,otherResurre
         System.out.println(getName()+"의 남은 마력 : "+getMP());
         System.out.println("----------------------------");
         GameConstants.battleCount++;
+        String logMemo = this.getName()+"의 "+"R 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     @Override
     public void useE(Champion target) {
@@ -62,6 +66,8 @@ public class Garen extends Champion implements Tanker,ShortDistance,otherResurre
         setMP(mp);
         System.out.println(getName()+"의 남은 마력 : "+getMP());
         System.out.println("---------------------------");
+        String logMemo = this.getName()+"의 "+"E 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     @Override
     public void useW(Champion target) {
@@ -78,6 +84,8 @@ public class Garen extends Champion implements Tanker,ShortDistance,otherResurre
 
         System.out.println("----------------------------");
         GameConstants.battleCount++;
+        String logMemo = this.getName()+"의 "+"W 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     public void levelUp(int ex) {
         System.out.println("------------levelUp-------------");

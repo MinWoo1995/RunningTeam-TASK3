@@ -12,6 +12,8 @@ public class Ash extends Champion implements otherResurrect {
         System.out.println("----------------------------");
         GameConstants.battleCount++;
         target2.ohterResurrect();
+        String logMemo = this.getName()+"의 "+"Q 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     @Override
     public void useR(Champion target) {
@@ -25,6 +27,8 @@ public class Ash extends Champion implements otherResurrect {
         setMP(mp);
         System.out.println(getName()+"의 남은 마력 : "+getMP());
         GameConstants.battleCount++;
+        String logMemo = this.getName()+"의 "+"R 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     @Override
     public void useE(Champion target) {
@@ -38,6 +42,8 @@ public class Ash extends Champion implements otherResurrect {
         setMP(mp);
         System.out.println(getName()+"의 남은 마력 : "+getMP());
         GameConstants.battleCount++;
+        String logMemo = this.getName()+"의 "+"E 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     @Override
     public void useW(Champion target) {
@@ -53,6 +59,8 @@ public class Ash extends Champion implements otherResurrect {
         System.out.println(getName()+"의 남은 마력 : "+getMP());
         System.out.println("----------------------------");
         GameConstants.battleCount++;
+        String logMemo = this.getName()+"의 "+"W 스킬 전투로그 기록 타겟 : "+ target.getName();
+        GameConstants.Log(logMemo);
     }
     @Override
     public void checkHP(){
