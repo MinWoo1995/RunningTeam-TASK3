@@ -36,7 +36,7 @@ public abstract class Champion {
         this.defenseDamage = GameConstants.getDefenseDamage();//private static final 상수이기 때문에 게터 메서드로 참조
         this.HP = GameConstants.HP;//static final으로 상수를 가져와서 초기화 진행
         this.MP = MP;
-        this.maxEx = maxEx;
+        this.maxEx =  maxEx;
 
         while(true) {
             //체력을 어떻게 설정할지 입력받기
