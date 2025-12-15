@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public abstract class Champion {
+public abstract class Champion implements otherResurrect {
     private String name;
     private int levle;
     private int attackDamage;
@@ -23,6 +23,7 @@ public abstract class Champion {
     private int resurrectCount2 = 0;
     private int maxresurrectCount = 0;
     private int maxresurrectCount2 = 0;
+    private int teamcolor = 0;
 
     final double CRITICAL_CHANCE = 0.5;//50% 확률
     Random random = new Random();
@@ -37,6 +38,7 @@ public abstract class Champion {
         this.HP = GameConstants.HP;//static final으로 상수를 가져와서 초기화 진행
         this.MP = MP;
         this.maxEx =  maxEx;
+        GameConstants.setchampionnum(1);
 
         while(true) {
             //체력을 어떻게 설정할지 입력받기
@@ -52,7 +54,25 @@ public abstract class Champion {
                 System.out.println("입력을 잘못하셨습니다. L1,L2,L3,L4 중에서 대소문자를 구분하여 입력해주세요 : ");
             }
         }
+        while(true) {
+            //체력을 어떻게 설정할지 입력받기
+            System.out.print(this.getName() + "의 RED BLUE 팀을 입력해주세요: ");
+            Scanner scan = new Scanner(System.in);
+            String scan1 = scan.nextLine();
+            if (scan1.equals("RED") || scan1.equals("BLUE")) {
+                //[문제] GameConstants.championsValue(scan); 이넘클래스는 이렇게 호출불가능
+                //[해결] 리턴값을 저장할 공간 = 클래스명.메서드명.해당메서드의 세터로 셋팅후.게터로 리턴해달라
+                this.teamcolor = GameConstants.TeamColor.valueOf(scan1).getValue();
+                break;
+            } else {
+                System.out.println("입력을 잘못하셨습니다. RED,BLUE 중에서 대소문자를 구분하여 입력해주세요 : ");
+            }
+        }
     }
+    public int getTeamcolor() {
+        return teamcolor;
+    }
+    public void setTeamcolor(int teamcolor) {}
     public int criticalDamage(){
         double probabilityCheck = random.nextDouble();
         if (probabilityCheck < CRITICAL_CHANCE) {
@@ -187,4 +207,5 @@ public abstract class Champion {
     }
     public abstract void checkHP();//공격자가 공격 당한 챔피언의 피를 본인 스스로 확인해보라는 메서드
     public void hook(){}
+    public void ohterResurrect(){}
 }

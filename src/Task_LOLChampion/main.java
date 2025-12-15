@@ -1,5 +1,10 @@
 package Task_LOLChampion;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
         Garen garen1 = new Garen("Garen1");
@@ -93,6 +98,57 @@ public class main {
         //실행 결과 확인하기 GameConstants.championsValue에서 이넘을 정의하고 챔피언 클래스의 생성자에 마력을 설정하게 로직을 구현
 
         //부활(resurrect) 메서드를 템플릿 메서드 패턴으로 확장해보기
+
+        //3차 과제 시작
+        //서로의 팀에서 랜덤한 챔피언 하나씩 꺼내 싸우게 해보자.
+        //레드팀 블루팀을 만들고 거기서 랜덤하게 챔피언을 꺼내어 전투하게 하기
+
+        List<Champion> redTeam = new ArrayList<Champion>();
+        List<Champion> blueTeam = new ArrayList<Champion>();
+        List<Champion> allChampions = new ArrayList<Champion>();
+
+        allChampions.add(new Garen("가렌1"));
+        allChampions.add(new Ash("에쉬1"));
+        allChampions.add(new Ash("에쉬2"));
+        allChampions.add(new Garen("가렌2"));
+        allChampions.add(new Ash("에쉬3"));
+        allChampions.add(new Ash("에쉬4"));
+
+        //레드팀 블루팀 분류
+        for (int i = 0 ; i < allChampions.size(); i++) {
+            Champion a = allChampions.get(i);
+            if(a.getTeamcolor()==0){
+                redTeam.add(a);
+            }else{
+                blueTeam.add(a);
+            }
+        }
+
+        //랜덤 전투하기
+        RandomBattle randomBattle = new RandomBattle(redTeam, blueTeam);//배틀 객채 생성
+
+        while(true) {
+            //체력을 어떻게 설정할지 입력받기
+            System.out.print("몇 라운드로 진행 하시겠습니까?(정수로 입력하세요) : ");
+            Scanner scan = new Scanner(System.in);
+            String scan1 = scan.nextLine();//입력받기
+            int scanInt = Integer.parseInt(scan1);//int로 변환
+            if (0<scanInt) {
+                for (int i = 0; i <= scanInt; i++) {
+                    randomBattle.randomBattleManager(redTeam,blueTeam);
+                }
+                break;
+            } else {
+                System.out.println("입력을 잘못하셨습니다. 음수,소수점 제외 양의 정수만 입력하세요");
+            }
+        }
+
+
+
+
+
+
+
 
 
 

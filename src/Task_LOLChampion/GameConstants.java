@@ -24,12 +24,17 @@ public class GameConstants {//여기에는 static 선언 불가.
     private static final int resurrectCount = 0;
     private static final int maxresurrectCount = 2;
     private static final int maxresurrectCount2 = 3;
-
-
+    private static int championnum = 0;//챔피언 생성 수
 
     private GameConstants(){
         throw new AssertionError("이 클래스는 상수만 취급하는 클래스입니다. [클래스명.상수명]으로 호출하세요");
         //객체를 생성할려고 한다면, 오류문을 출력하여 올바르게 사용할수 있도록 안내하자!
+    }
+    public static int getchampionnum() {
+        return championnum;
+    }
+    public static void setchampionnum(int championnum) {
+        GameConstants.championnum += championnum;//챔피언 생성시 1씩 증가
     }
     //스태틱으로 선언된 상수들만 취급함으로, 생성자를 퍼블릭으로 사용하게 되면,
     //다른 개발자가 불필요하게 객체를 생성하는 일을 방지하여 자원을 효율적으로 사용할수있다.
@@ -75,6 +80,21 @@ public class GameConstants {//여기에는 static 선언 불가.
         //게터
         public int getValue(){
             return value;
+        }
+    }
+    public enum TeamColor{
+        //정의
+        RED(0),
+        BLUE(1);
+        //속성
+        private final int color;
+        //생성자
+        TeamColor(int color){
+            this.color = color;
+        }
+        //게터
+        public int getValue(){
+            return color;
         }
     }
 }
