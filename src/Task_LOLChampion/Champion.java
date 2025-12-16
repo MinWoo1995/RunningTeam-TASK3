@@ -208,4 +208,9 @@ public abstract class Champion implements otherResurrect {
     public abstract void checkHP();//공격자가 공격 당한 챔피언의 피를 본인 스스로 확인해보라는 메서드
     public void hook(){}
     public void ohterResurrect(){}
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

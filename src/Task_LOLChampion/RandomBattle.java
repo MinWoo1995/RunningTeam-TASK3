@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class RandomBattle{
     //속성
-    List<Champion> redPlayer;
-    List<Champion> bluePlayer;
+    List<? extends Champion> redPlayer;
+    List<? extends Champion> bluePlayer;
     int minTeamSize = 0;
     int blueNum;
     int redNum;
@@ -16,7 +16,9 @@ public class RandomBattle{
     int redRangeSize;
 
     //생성자
-    public RandomBattle(List<Champion> redTeam,List<Champion> blueTeam){
+    public RandomBattle(List<?extends Champion> redTeam,List<? extends Champion> blueTeam){//와일드 카드로 사용
+        //List<?extends Champion> 챔피언 클래스를 상속받은 어떤 타입의 배열만 가능하다
+        //챔피언을 상속받은 가렌,에쉬..등 도 가능하다.!
 
         this.blueMaxTeamSize = blueTeam.size();
         this.redMaxTeamSize = redTeam.size();

@@ -143,6 +143,31 @@ public class main {
             }
         }
 
+        //클래스 Team 에서 설계된 내용중에 어떻게 문제가 발생하는지 작성해둠
+
+        //제네릭 와일드 카드 적용해보기->RandomBattle클래스에 매개변수를 와일드 카드로 수정
+
+        //printTeamMembers클래스를 만들어 가렌끼리 에쉬끼리 팀을 구성해보기
+        List<Garen> garenList = new ArrayList<>();
+        List<Ash> ashList = new ArrayList<>();
+        garenList.add(garen1);
+        garenList.add(garen2);
+
+        ashList.add(ash1);
+        ashList.add(ash2);
+        ashList.add(ash3);
+        ashList.add(ash4);
+
+        System.out.println("----------가렌 챔피언 목록입니다.----------");
+        printTeamMembers.printTeamMembers(garenList);
+        System.out.println("----------에쉬 챔피언 목록입니다.----------");
+        printTeamMembers.printTeamMembers(ashList);
+        //[문제]allChampion.getMembers() 메서드 호출시 Task_LOLChampion.Garen@728938a9 해쉬값이 나오게 됨
+        //[해결]Champion 클래스에 toString()을 오버라이드 하여 List 컬렉션을 출력할때 JVM이 오버라이드로 정의된 toString()을 호출하여 문자열을 받아간다.
+
+
+
+
 
 
 
